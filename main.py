@@ -6,7 +6,12 @@ def main():
             n = n * 10 + digit
             flag = True
             break
-    print("-1" if flag == False else str(n) + "0" * (d - 1))
+
+    if not flag:
+        print(-1)
+    else:
+        print(n, end="")
+        [print(0, end="") for _ in range(d-1)]
 
 
 if __name__ == "__main__":
