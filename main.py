@@ -1,12 +1,12 @@
+from tkinter import *
+from calculate import calculate
+
 def main():
     n, k, d = map(int, input().split())
-    flag = False
-    for digit in range(10):
-        if (n * 10 + digit) % k == 0:
-            n = n * 10 + digit
-            flag = True
-            break
-    print("-1" if flag == False else str(n) + "0" * (d - 1))
+    root = Tk()
+    root.geometry("200x200")
+    answer = Label(root, text=calculate(n, k, d)).pack()
+    root.mainloop()    
 
 
 if __name__ == "__main__":
